@@ -1,23 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar  color="primary">
-    <ion-title>
-      Quiz 
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-title> Quiz </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-list>
-
-    <div  *ngFor="let question of Questions">
-             <ion-item>{{ question.Questions }} <br></ion-item>
-             <ion-item *ngFor="let option of question.Options">
-             <ion-label>{{option}}</ion-label>
-             <input type="radio" id="male" name="gender" slot="start" value={{option}} [(ngModel)]="question.userAnswer">
-             </ion-item><br>
-             Your Answer:   {{question.userAnswer}}
-    </div><br><br><br><br>
-  <ion-button style="margin-left: 850px;" (click)="submit()">submit</ion-button>
-
+    <div *ngFor="let question of Questions">
+      <ion-item>{{ question.Questions }} <br /></ion-item>
+      <ion-item *ngFor="let option of question.Options">
+        <ion-label>{{option}}</ion-label>
+        <input
+          type="radio"
+          id="male"
+          name="gender"
+          slot="start"
+          value="{{option}}"
+          [(ngModel)]="question.userAnswer"
+        /> </ion-item
+      ><br />
+      Your Answer: {{question.userAnswer}}
+    </div>
+    <br /><br /><br /><br />
+    <ion-button style="margin-left: 850px" (click)="submit()"
+      >submit</ion-button
+    >
   </ion-list>
 </ion-content>
